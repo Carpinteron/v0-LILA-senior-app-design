@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Check, Phone, AlertCircle, Pill, Activity } from "lucide-react"
+import { Check, Phone, AlertCircle, Pill, Activity, Mic } from "lucide-react"
 import Link from "next/link"
 import { SeniorNav } from "@/components/senior-nav"
 import { VoiceButton } from "@/components/voice-button"
@@ -80,6 +80,25 @@ export default function SeniorHomePage() {
             </Button>
           </Card>
         )}
+
+        <Card className="p-6 sm:p-8 bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-primary/20 rounded-[10px]">
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+            <div className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-[10px] bg-primary shrink-0">
+              <Mic className="h-8 w-8 sm:h-10 sm:w-10 text-white" />
+            </div>
+            <div className="flex-1 text-center sm:text-left">
+              <h3 className="text-xl sm:text-2xl lg:text-[28px] font-semibold text-foreground mb-2">Usa tu voz</h3>
+              <p className="text-base sm:text-lg lg:text-[20px] text-muted-foreground">
+                Controla LILA con comandos de voz
+              </p>
+            </div>
+            <Link href="/senior/voice-command" className="w-full sm:w-auto">
+              <Button size="lg" className="w-full sm:w-auto h-12 sm:h-14 text-base sm:text-lg rounded-[10px]">
+                Abrir comandos de voz
+              </Button>
+            </Link>
+          </div>
+        </Card>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
           <Button
